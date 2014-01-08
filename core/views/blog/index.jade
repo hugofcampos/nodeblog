@@ -1,0 +1,8 @@
+extends ../layout/default
+block content
+    ul
+      each post, i in posts
+        li
+          a(href='post/'+post.id) #{post.title}
+          p #{post.content.slice(0,30)}...
+          
