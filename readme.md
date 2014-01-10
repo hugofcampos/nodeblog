@@ -12,4 +12,4 @@ A very simple Node.js blog by a Node.js beginner
 
 Then access http://localhost:3000 in your browser
 
-To access admin: http://localhost:3000
+To access admin: http://localhost:3000/admin
