@@ -1,0 +1,17 @@
+body {
+  padding: 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#menu { height:20px; margin-bottom: 10px;  }
+#menu li{ list-style: none; float: left; border: 1px solid #ddd; padding: 2px 4px; margin-right: 5px; }
+
+#create-post { width:300px; float:left; }
+
+#posts { float: left; }
+#posts li{ list-style: none; padding: 2px 4px; width: 600px; margin: 0 0 10px 0; border-bottom: 1px solid #ddd; }
+#posts li p{ margin: 5px 0 5px 0 }

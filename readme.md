@@ -11,3 +11,5 @@ A very simple Node.js blog by a Node.js beginner
     $ npm start
 
 Then access http://localhost:3000 in your browser
+
+To access admin: http://localhost:3000

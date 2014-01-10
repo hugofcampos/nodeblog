@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta(charset='utf8')
+    base(href='/')
+    title Node.js Blog Admin
+    link(rel='stylesheet', href='/stylesheets/admin_style.css')
+  body
+    #header
+      h1.title Admin
+      #menu
+        ul
+          li 
+            a(href='/admin/posts.html') Home
+          li
+            a(href='/admin/posts.html') Posts
+    #container
+    block content

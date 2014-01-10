@@ -1,0 +1,27 @@
+extends ../../layout/admin
+block content
+    h2 Posts
+
+    div#create-post
+      h3 Create Post
+      form(name="post", action="admin/posts", method="post")
+        div
+          | Title:
+          input(type="text", name="title")
+
+        div
+          | Content:
+          textarea(name="content", cols="20", rows="5")
+
+        input(type="submit", value="Submit")
+
+    div#posts
+      h3 All content
+      ul
+        each post, i in posts
+          li
+            p 
+              a(href='/admin/posts/'+post.id) #{post.title}            
+            a(href='/admin/posts/'+post.id+'/update.html') edit
+            span  | 
+            a(href='/admin/posts/'+post.id+'/delete.html') delete
