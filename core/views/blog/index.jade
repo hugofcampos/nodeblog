@@ -1,8 +1,9 @@
 extends ../layout/default
 block content
-    ul
+    ul#posts
       each post, i in posts
         li
+          p(class="date") #{("0" + post.date.getDay()).slice(-2)}/#{("0" + post.date.getMonth()+1).slice(-2)}/#{post.date.getFullYear()}
           a(href='post/'+post.id) #{post.title}
           p #{post.content.slice(0,30)}...
           

@@ -2,4 +2,5 @@ extends ../layout/default
 block content
 
     h2 #{post.title}
+    p #{("0" + post.date.getDay()).slice(-2)}/#{("0" + post.date.getMonth()+1).slice(-2)}/#{post.date.getFullYear()}
     div #{post.content}

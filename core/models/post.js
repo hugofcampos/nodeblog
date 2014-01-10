@@ -4,7 +4,7 @@ module.exports = function(app){
   var post = Schema({
     title  	:  String,
     content :  String,
-    date  	:  Number
+    date  	:  Date
   });
 
   return global.db.model('posts', post);
