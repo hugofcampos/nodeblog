@@ -13,6 +13,10 @@ block content
           | Content:
           textarea(name="content", cols="20", rows="5")
 
+        div
+          | Tags:
+          input(name="tags", class="tags")
+
         input(type="submit", value="Submit")
 
     div#posts
@@ -21,7 +25,10 @@ block content
         each post, i in posts
           li
             p 
-              a(href='/admin/posts/'+post.id) #{post.title}            
+              a(href='/admin/posts/'+post.id) #{post.title}  
+            div
+              each tag, i in post.tags
+                span #{tag.name} 
             a(href='/admin/posts/'+post.id+'/update.html') edit
             span  | 
             a(href='/admin/posts/'+post.id+'/delete.html') delete

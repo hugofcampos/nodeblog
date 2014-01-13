@@ -19,7 +19,9 @@ module.exports = function(app) {
       });
 
     },
-    create: function(req, res){
+    create: function(req, res){      
+      req.body.tags = AdminController.tagTextToObj(req.body.tags);
+
       var post = new Post(req.body);
       post.date = new Date();
 
@@ -51,8 +53,9 @@ module.exports = function(app) {
     },
     updateForm: function(req, res){
       Post.findById(req.params.id, function(err, post){
-        if(err) {throw err;}        
-          res.render('admin/posts/update', {'post':post});        
+        if(err) {throw err;}
+        tags = AdminController.tagObjToText(post.tags);
+        res.render('admin/posts/update', {'post':post, 'tags':tags});
       });
     },
     update: function(req, res){
@@ -61,6 +64,7 @@ module.exports = function(app) {
 
         post.title = req.body.title;
         post.content = req.body.content;
+        post.tags = AdminController.tagTextToObj(req.body.tags);
         post.date = new Date();
         post.save();
 
@@ -89,6 +93,21 @@ module.exports = function(app) {
         }
       });
     },
+    tagTextToObj: function(tags){      
+      objTags = Array();
+      tmpTags = tags.split(',');
+      for(var i in tmpTags){
+        objTags.push({name:tmpTags[i]});
+      }
+      return objTags;
+    },
+    tagObjToText: function(tags){
+      txtTags = Array();
+      for(var i=0; i<tags.length; i++){
+        txtTags.push(tags[i].name);
+      }
+      return txtTags.join(', ');
+    }
   };
 
   return AdminController;

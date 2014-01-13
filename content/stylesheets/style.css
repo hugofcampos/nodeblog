@@ -8,7 +8,14 @@ a {
 }
 
 #menu { height:20px; margin-bottom: 10px; }
-#menu li{ list-style: none; float: left; border: 1px solid #ddd; padding: 2px 4px; margin-right: 5px; }
+#menu li{ list-style: none; float: left; border: 1px solid #ddd; padding: 2px 4px; margin-right: 5px; height: 22px; line-height: 21px;}
+
+#container { float: left; width: 60%; }
+
+#tags { float: left; width: 20%; margin-left: 30px; }
+#tags ul { padding-left: 0; }
+#tags li { list-style: none; margin-bottom: 10px; }
+#tags li span{ border: 1px solid #ddd; padding: 2px 4px; }
 
 #posts li{ list-style: none; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
 #posts li p { margin: 5px auto 5px 0; }

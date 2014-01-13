@@ -12,4 +12,8 @@ block content
           | Content:
           textarea(name="content") #{post.content}
 
+        div
+          | Tags:
+          input(name="tags", class="tags", value="#{tags}")
+
         input(type="submit", value="Submit")
