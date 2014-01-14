@@ -11,7 +11,7 @@ module.exports = function(app) {
         params.title = new RegExp(req.params.search, 'i');
       }
 
-      var query = Post.find(params);
+      var query = Post.find(params).sort('-date');
 
       query.exec(function(err, posts){
 
