@@ -195,7 +195,7 @@ module.exports = function(app) {
       for(var i=0; i<tags.length; i++){
         txtTags.push(tags[i].name);
       }
-      return txtTags.join(', ');
+      return txtTags.join(',');
     }
   };
 
