@@ -1,3 +1,6 @@
 $(document).ready(function(){
-  $('.tags').tagsInput();
+  $('.tags').tagsInput({
+    'height':'auto',
+    'width':'200px'
+  });
 });
