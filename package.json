@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "author": "Hugo Campos",
   "license": "MIT",
@@ -18,5 +18,10 @@
     "passport": "0.1.*",
     "passport-local": "0.1.*",
     "bcrypt": "~0.7.7"
+  },
+  "devDependencies": {
+    "supertest": "0.8.*",
+    "mocha": "1.17.*",
+    "should": "2.1.*"
   }
 }
