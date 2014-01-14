@@ -8,7 +8,7 @@ var config = require('./core/config'),
 	
 var app	= express();
 
-global.db = mongoose.connect(config.db.mongodb);
+global.db = mongoose.connect(config.development.db.mongodb);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'core/views'));
