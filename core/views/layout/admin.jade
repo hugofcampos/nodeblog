@@ -20,5 +20,10 @@ html
             a(href='/admin/posts.html') Home
           li
             a(href='/admin/posts.html') Posts
+          li
+            a(href='/admin/users.html') Users
+          if(user)  
+            li
+              a(href='/admin/logout') Logout
     #container
     block content

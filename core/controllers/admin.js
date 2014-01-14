@@ -1,8 +1,12 @@
 module.exports = function(app) {
 
-  var Post = app.core.models.post;
+  var Post = app.core.models.post
+      User = app.core.models.user;
 
   var AdminController = {
+    login: function(req, res){
+      res.render('admin/login');      
+    },
     index: function(req, res){
       Post.find().sort('-date').exec(function(err, posts) {
         switch (req.params.format) {
@@ -93,6 +97,91 @@ module.exports = function(app) {
         }
       });
     },
+
+
+    indexUser: function(req, res){
+      User.find().exec(function(err, users) {
+        switch (req.params.format) {
+          
+          case 'json':            
+              return users;
+          break;
+
+          default:
+            res.render('admin/users/index', {'users':users});
+        }
+      });
+
+    },
+    createUser: function(req, res){    
+      var user = new User(req.body);      
+
+      user.save(function(err) {
+        if(err) throw(err);
+        switch (req.params.format) {
+          case 'json':
+            res.send(user);
+           break;
+
+           default:
+            res.redirect('/admin/users.html');
+        }
+      });
+    },
+    readUser: function(req, res){
+      User.findById(req.params.id, function(err, user){
+        if(err) {throw err;}
+        switch (req.params.format) {
+          
+          case 'json':
+            res.send(user);
+          break;
+
+          default:
+            res.render('admin/users/read', {'user':user});
+        }
+      });
+    },
+    updateFormUser: function(req, res){
+      User.findById(req.params.id, function(err, user){
+        if(err) {throw err;}
+        res.render('admin/users/update', {'user':user});
+      });
+    },
+    updateUser: function(req, res){
+      User.findById(req.params.id, function(err, user){
+        if(err) {throw err;}
+
+        user.password = req.body.password;      
+        user.save();
+
+        switch (req.params.format) {
+          
+          case 'json':
+            res.send(user);
+          break;
+
+          default:
+            res.redirect('/admin/users.html');
+        }
+      });
+    },
+    removeUser: function(req, res){
+      User.findById(req.params.id).remove().exec(function(err, user){
+        if(err) {throw err;}
+        switch (req.params.format) {
+          
+          case 'json':
+            res.send({res:1});
+          break;
+
+          default:
+            res.redirect('/admin/users.html');
+        }
+      });
+    },
+
+
     tagTextToObj: function(tags){      
       objTags = Array();
       tmpTags = tags.split(',');

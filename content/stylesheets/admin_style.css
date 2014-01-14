@@ -15,3 +15,9 @@ a {
 #posts { float: left; }
 #posts li{ list-style: none; padding: 2px 4px; width: 600px; margin: 0 0 10px 0; border-bottom: 1px solid #ddd; }
 #posts li p{ margin: 5px 0 5px 0 }
+
+#create-user { width:300px; float:left; }
+
+#users { float: left; }
+#users li{ list-style: none; padding: 2px 4px; width: 600px; margin: 0 0 10px 0; border-bottom: 1px solid #ddd; }
+#users li p{ margin: 5px 0 5px 0 }

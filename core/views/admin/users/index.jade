@@ -1,0 +1,31 @@
+extends ../../layout/admin
+block content
+    h2 User
+
+    div#create-user
+      h3 Create User
+      form(name="post", action="admin/users", method="post")
+        div
+          | Name:
+          input(type="text", name="name")
+
+        div
+          | E-mail:
+          input(type="text", name="email")
+
+        div
+          | Password:
+          input(type="password", name="password")
+
+        input(type="submit", value="Submit")
+
+    div#users
+      h3 All users
+      ul
+        each user, i in users
+          li
+            p 
+              a(href='/admin/users/'+user.id) #{user.name}              
+            a(href='/admin/users/'+user.id+'/update.html') change pass
+            span  | 
+            a(href='/admin/users/'+user.id+'/delete.html') delete

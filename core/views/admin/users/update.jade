@@ -1,0 +1,15 @@
+extends ../../layout/admin
+block content
+    h2 Change User Pass
+
+    div#create-user
+      form(name="post", action="admin/users/#{user._id}/update.html", method="post")
+
+        div
+          | User: #{user.name} | #{user.email}
+
+        div
+          | Password:
+          input(type="password", name="password")
+
+        input(type="submit", value="Submit")

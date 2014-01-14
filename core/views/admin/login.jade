@@ -1,0 +1,15 @@
+extends ../layout/admin
+block content
+    h2 Login
+
+    div#login      
+      form(action="admin/login", method="post")
+        div
+          | E-mail:
+          input(type="text", name="username")
+
+        div
+          | Password:
+          input(type="password", name="password")
+
+        input(type="submit", value="Login")
