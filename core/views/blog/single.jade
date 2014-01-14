@@ -4,3 +4,23 @@ block content
     h2 #{post.title}
     p #{("0" + post.date.getDay()).slice(-2)}/#{("0" + post.date.getMonth()+1).slice(-2)}/#{post.date.getFullYear()}
     div #{post.content}
+
+    h3 Comments
+    ul#comments
+      each comment, i in comments
+        li                    
+          p.nome #{comment.author}
+          p #{comment.comment}
+
+    div#create-comment
+      h3 Create Comment
+      form(name="comment", action="post/"+post._id+"/comment", method="post")
+        div
+          | Author:
+          input(type="text", name="author")
+
+        div
+          | Comment:
+          textarea(name="comment", cols="20", rows="5")
+
+        input(type="submit", value="Submit")

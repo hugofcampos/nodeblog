@@ -20,3 +20,8 @@ a {
 #posts li{ list-style: none; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
 #posts li p { margin: 5px auto 5px 0; }
 #posts li p.date { font-size: 12px; }
+
+#comments { padding-left: 0; }
+#comments li { list-style: none; margin-bottom: 10px; border: 1px solid #ddd; padding:2px 4px; }
+#comments li p { margin: 0; }
+#comments li p.nome { font-size: 10px; }

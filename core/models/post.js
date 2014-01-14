@@ -5,7 +5,8 @@ module.exports = function(app){
     title  	:  String,
     content :  String,
     date  	:  Date,
-    tags    :  [{ name: String }]
+    tags    :  [{ name: String }],
+    comments     : [ {type : Schema.Types.ObjectId, ref : 'comments'} ]
   });
 
   post.statics.getTags = function (cb) {

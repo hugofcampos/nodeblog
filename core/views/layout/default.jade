@@ -24,10 +24,13 @@ html
     #tags
       h3 Tags
       ul
-        each tag, i in tags
-          li 
-            a(href='/tag/' + tag._id)  
-              span #{tag._id} (#{tag.count})
+        if(tags.length>0)
+          each tag, i in tags
+            li 
+              a(href='/tag/' + tag._id)  
+                span #{tag._id} (#{tag.count})
+        else
+          li no tag until now
 
     script(src='http://code.jquery.com/jquery-1.10.1.min.js')
     script(src='/javascripts/blog.js')
