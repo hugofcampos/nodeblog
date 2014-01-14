@@ -8,7 +8,12 @@ var config = require('./core/config'),
 	
 var app	= express();
 
-global.db = mongoose.connect(config.development.db.mongodb);
+app.configure('test', function(){
+    global.db = mongoose.connect(config.test.db.mongodb);
+});
+app.configure('development', function(){
+    global.db = mongoose.connect(config.development.db.mongodb);
+});
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'core/views'));
@@ -67,3 +72,5 @@ load('core/models')
 app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+module.exports = app;

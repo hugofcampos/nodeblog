@@ -5,7 +5,7 @@ module.exports = {
     }
   },
   "test" : {
-      "db": {
+    "db": {
       "mongodb": "mongodb://localhost/blog_test"
     }
   }
