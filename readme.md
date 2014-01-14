@@ -16,6 +16,12 @@ Then access http://localhost:3000 in your browser
 
 To access admin: http://localhost:3000/admin
 
+## Test instructions
+
+  $ cd /path/to/project
+
+  $ npm test
+
 ## Admin considerations
 
 After installing, the blog has no user registered, so everyone can access /admin pages.
