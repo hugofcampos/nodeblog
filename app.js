@@ -1,13 +1,14 @@
-var express = require('express'),
-	path 	= require('path'),
-	load 	= require('express-load'),
+var config = require('./core/config'),
+    express = require('express'),
+    path 	= require('path'),
+    load 	= require('express-load'),
     mongoose = require('mongoose'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy;
 	
 var app	= express();
 
-global.db = mongoose.connect('mongodb://localhost/blog');
+global.db = mongoose.connect(config.db.mongodb);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'core/views'));

@@ -7,6 +7,8 @@ A very simple Node.js blog by a Node.js beginner
     $ cd /path/to/project
 
     $ npm install
+
+Clone /core/config.default.js to /core/config.js and set your configurations up
   
     $ npm start
 
